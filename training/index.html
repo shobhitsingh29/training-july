@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>HTML5 Types</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<style>
+    img {
+        height: 100px;
+        width: 100px;
+    }
+</style>
+<body>
+
+<div>
+    <textarea style="width: 400px;height: 100px;background: yellow;" placeholder="this contains content"
+              contenteditable="true"></textarea>
+</div>
+
+<div style="height: 510px; width: 510px;;background:green;">
+    <div id="draggableObject" draggable="true" ondragstart="startDrag(event)"><img src="http://html.net/tutorials/javascript/images/1.jpg"> </div>
+   <div id="draggableObject" draggable="true" ondragstart="startDrag(event)"><img src="http://html.net/tutorials/javascript/images/2.jpg"> </div>
+   <div id="draggableObject" draggable="true" ondragstart="startDrag(event)"><img src="http://html.net/tutorials/javascript/images/3.jpg"> </div>
+   <div id="draggableObject" draggable="true" ondragstart="startDrag(event)"><img src="http://html.net/tutorials/javascript/images/4.jpg"> </div>
+
+</div>
+
+
+<div id="droppableContainer" ondragover="allowDrop(event)" style="background-color: red; height: 510px; width: 510px;" ondrop="drop(event)"></div>
+
+
+<!--<script src="node_modules/nodep-date-input-polyfill/nodep-date-input-polyfill.dist.js"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+<script>
+
+if(Modernizr.geolocation) {
+function geoSuccess(position) {
+console.log("Position is: " + position.coords.latitude + " " + position.coords.longitude);
+var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+var geoCoder = new google.maps.Geocoder();
+geoCoder.geocode({ 'latLng': latlng }, function (results, status) {
+if (status === google.maps.GeocoderStatus.OK) {
+if(results[1]) {
+console.log("Location: " + results[1].formatted_address);
+}
+}
+});
+}
+function geoFail(error) {
+console.log("Error is: " + error);
+}
+navigator.geolocation.getCurrentPosition(geoSuccess, geoFail);
+}
+
+if(Modernizr.inputtypes.date) {
+        console.log("Yes");
+    } else {
+        console.log("No");
+    }
+   if(Modernizr.geolocation) {
+       function geoSuccess(position) {
+           console.log("Position is: " + position.coords.latitude + " " + position.coords.longitude);
+           var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+           var geoCoder = new google.maps.Geocoder();
+           geoCoder.geocode({ 'latLng': latlng }, function (results, status) {
+               if (status === google.maps.GeocoderStatus.OK) {
+                   if(results[1]) {
+                       console.log("Location: " + results[1].formatted_address);
+                   }
+               }
+           });
+       }
+       }
+    function startDrag(event) {
+        event.dataTransfer.setData("text", event.target.id);
+    }
+    function drop(ev) {
+        var data = ev.dataTransfer.getData("text");
+        ev.target.appendChild(document.getElementById('draggableObject'));
+    }
+    function allowDrop(ev) {
+        ev.preventDefault();
+        console.log(ev.dataTransfer);
+    }
+   navigator.sayswho= (function(){
+       var ua= navigator.userAgent, tem;
+               console.log(ua);
+               M= ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
+       if(/trident/i.test(M[1])){
+           tem=  /\brv[ :]+(\d+)/g.exec(ua) || [];
+           return 'IE '+(tem[1] || '');
+       }
+       if(M[1]=== 'Chrome'){
+           tem= ua.match(/\b(OPR|Edge)\/(\d+)/);
+           if(tem!= null) return tem.slice(1).join(' ').replace('OPR', 'Opera');
+       }
+       M= M[2]? [M[1], M[2]]: [navigator.appName, navigator.appVersion, '-?'];
+       if((tem= ua.match(/version\/(\d+)/i))!= null) M.splice(1, 1, tem[1]);
+       return M.join(' ');
+   })();
+
+   console.log(navigator.sayswho);
+</script>
+</body>
+</html>

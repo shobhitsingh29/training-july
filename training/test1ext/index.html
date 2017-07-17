@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>HTML5 Types</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+<form>
+    <input type="date">
+</form>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+<script>
+    if(Modernizr.inputtypes.date) {
+        console.log("Yes");
+    } else {
+        console.log("No");
+    }
+</script>
+</body>
+</html>

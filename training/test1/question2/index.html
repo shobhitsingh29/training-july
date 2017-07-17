@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>HTML5 Types</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<style>
+    img {
+        height: 80px;
+        width: 80px;
+    }
+</style>
+<body>
+<div style="height: 400px; width: 400px;background:green;" ondragover="allowDrop(event)" ondrop="drop(event)">
+    <div id="draggableObject1" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="true"
+         ondragstart="startDrag(event)"><img
+            src="http://html.net/tutorials/javascript/images/1.jpg"></div>
+    <div id="draggableObject2" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="true"
+         ondragstart="startDrag(event)"><img
+            src="http://html.net/tutorials/javascript/images/2.jpg"></div>
+    <div id="draggableObject3" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="true"
+         ondragstart="startDrag(event)"><img
+            src="http://html.net/tutorials/javascript/images/3.jpg"></div>
+    <div id="draggableObject4" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="true"
+         ondragstart="startDrag(event)"><img
+            src="http://html.net/tutorials/javascript/images/4.jpg"></div>
+
+</div>
+<div style="height: 10px; width: 500px ;background: white;">
+
+</div>
+
+<div id="droppableContainer" ondragover="allowDrop(event)" style="background-color: red;height: 400px; width: 400px"
+     ondrop="drop(event)">
+
+</div>
+<div style="height: 10px; width: 400px ;background:white;">
+
+</div>
+<div>
+    <textarea style="width: 400px;height: 100px;background: yellow;" placeholder="this contains content"
+              contenteditable="true"></textarea>
+</div>
+<script>
+    function startDrag(event) {
+        event.dataTransfer.setData("text", event.target.id);
+    }
+    function drop(ev) {
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("text");
+
+        var regex = /\d+/g;
+        var id = data.match(regex);  // creates array from matches
+        var finalId = "draggableObject" + id;
+        ev.target.appendChild(document.getElementById(finalId));
+
+    }
+    function allowDrop(ev) {
+        ev.preventDefault();
+        console.log(ev.dataTransfer);
+    }
+</script>
+</body>
+</html>

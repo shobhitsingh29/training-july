@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'http://html.net/tutorials/javascript/images/3.jpg', true);
+    xhr.responseType = 'blob';
+
+    xhr.onload = function(e) {
+        if (this.status == 200) {
+            var blob = new Blob([this.response], {type: 'image/png'});
+
+        }
+    };
+
+    xhr.send();
+</script>
+</html>

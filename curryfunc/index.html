@@ -1,0 +1,47 @@
+<!doctype>
+<html>
+<head></head>
+<body>
+<script>
+    /*    var add = function (x) {
+     return function (...y
+     )
+     {
+     var total;
+     y.forEach(function () {
+     {
+     total += y[i]
+     }
+     return x + total;
+     }
+     )
+     }
+
+     }
+     }
+     var s1 = add(5);
+
+     console.log(s1(23, 32));
+     console.log(add(2)(3));*/
+    var greetDeeplyCurried = function(greeting) {
+        return function(separator) {
+            return function(emphasis) {
+                return function(name) {
+                    console.log(greeting + separator + name + emphasis);
+                };
+            };
+        };
+    };
+
+    var greetAwkwardly = greetDeeplyCurried("Hello")("...")("?");
+    greetAwkwardly("Heidi");
+
+    var sayHello = greetDeeplyCurried("Hello")(", ");
+    sayHello(".")("Heidi");
+
+    var askHello = sayHello("?");
+    askHello("Heidi");
+
+</script>
+</body>
+</html>
