@@ -6,6 +6,9 @@
     height:20px;
     background:#cccccc;
 }
+.colElements{
+    border: 1px solid black;
+}
 .block {
     display: inline-block;
     max-width: 50%;
