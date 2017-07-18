@@ -1,0 +1,21 @@
+#slider {
+    margin-left: 10px;
+}
+#mytab td{
+    width:100px;
+    height:20px;
+    background:#cccccc;
+}
+.block {
+    display: inline-block;
+    max-width: 50%;
+    margin-right: 10%;
+}
+
+input[type='range'] {
+    -webkit-appearance: none;
+    padding-left: 2px;
+    padding-right: 2px;
+    -webkit-border-radius: 5px;
+    background-image: -webkit-linear-gradient(top, #000000, #333333, #000000);
+}
