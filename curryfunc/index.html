@@ -3,45 +3,38 @@
 <head></head>
 <body>
 <script>
-    /*    var add = function (x) {
-     return function (...y
-     )
-     {
-     var total;
-     y.forEach(function () {
-     {
-     total += y[i]
-     }
-     return x + total;
-     }
-     )
-     }
+    var total = 0, count = 1;
+    while (count <= 10) {
+        total += count;
+        count += 1;
+    }
+    console.log(total);
 
-     }
-     }
+
+
+     /*
      var s1 = add(5);
 
      console.log(s1(23, 32));
-     console.log(add(2)(3));*/
-    var greetDeeplyCurried = function(greeting) {
-        return function(separator) {
-            return function(emphasis) {
-                return function(name) {
-                    console.log(greeting + separator + name + emphasis);
-                };
-            };
-        };
+     console.log(add(2)(3));*!/
+
+
+    function something() {
+        return 'sth';
+    }
+
+    var greeDeplyc = function (a=88) {
+        return function (b=55) {
+            return function (n= d=>{return "dfs"})
+            {
+                console.log(a + b + n);
+            }
+        }
+
     };
-
-    var greetAwkwardly = greetDeeplyCurried("Hello")("...")("?");
-    greetAwkwardly("Heidi");
-
-    var sayHello = greetDeeplyCurried("Hello")(", ");
-    sayHello(".")("Heidi");
-
-    var askHello = sayHello("?");
-    askHello("Heidi");
-
+    var sd = greeDeplyc("hello");
+    sd("sda")();
+*/
 </script>
 </body>
 </html>
