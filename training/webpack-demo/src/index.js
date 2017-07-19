@@ -1,6 +1,7 @@
-import _ from 'lodash';
+/*import _ from 'lodash';
 function getComponent() {
-    /*  var element = document.createElement('div');
+
+}*/    /*  var element = document.createElement('div');
      var button = document.createElement('button');
      var br = document.createElement('br');
      button.innerHTML = 'Click me and look at the console!';
@@ -30,7 +31,7 @@ function getComponent() {
      return element;
      }*/
 
-}
+
 /*
  getComponent().then(component => {
      document.body.appendChild(component);
