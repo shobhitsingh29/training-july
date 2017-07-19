@@ -7,16 +7,18 @@
 <link href="style.css" rel="stylesheet">
 <body>
 <div class="block">
-    <input type="number" id="chosenrow" value="0" onchange="myApp.updateSliderRow(this.value); myApp.createTable()">
+    <input type="number" id="chosenrow" value="0" min="0" max="10"
+           onchange="myApp.updateSliderRow(this.value); myApp.createTable()">
     <button>row</button>
     <div>
         0 <input id="sliderow" type="range"
-                 min="0" max="10" step="1" value="5" onchange="myApp.updateSliderRow(this.value);myApp.createTable()"/>
+                 min="0" max="10" step="1" value="5" onchange="myApp.updateSliderRow(this.value); myApp.createTable()"/>
         10
     </div>
 </div>
 <div class="block">
-    <input type="number" id="chosencol" value="0" onchange="myApp.updateSliderCol(this.value);myApp.createTable()">
+    <input type="number" id="chosencol" value="0" min="0" max="10"
+           onchange="myApp.updateSliderCol(this.value);myApp.createTable()">
     <button>col</button>
     <div>
         0 <input id="slidercol" type="range"
@@ -24,7 +26,6 @@
         10
     </div>
 </div>
-<input type="button" value="render" onclick="myApp.createTable()">
 <div id="dvTable">
 </div>
 </body>

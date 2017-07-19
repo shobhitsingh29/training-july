@@ -1,7 +1,6 @@
-/**
- * Created by shob on 18-07-2017.
- */
-var myApp = {};
+
+var myApp = myApp || {};
+
 myApp.updateSliderRow = function (slideAmount) {
     var display = document.getElementById("chosenrow");
     var Slidisplay = document.getElementById("sliderow");
@@ -17,9 +16,8 @@ myApp.updateSliderCol = function (slideAmount) {
 
 };
 myApp.createTable = function () {
-
     var mytable = $('<div id="basicTable"></div>');
-    document.getElementById("dvTable").innerHTML='';
+    document.getElementById("dvTable").innerHTML = '';
     var rows = parseInt($("#chosenrow").val());
     var cols = parseInt($("#chosencol").val());
     for (var i = 0; i < rows; i++) {

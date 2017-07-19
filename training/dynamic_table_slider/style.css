@@ -35,3 +35,11 @@ input[type='range'] {
     -webkit-border-radius: 5px;
     background-image: -webkit-linear-gradient(top, #000000, #333333, #000000);
 }
+
+input[type='number'] {
+    -webkit-appearance: none;
+    padding-left: 2px;
+    padding-right: 2px;
+    -webkit-border-radius: 5px;
+    width:70%;
+}
