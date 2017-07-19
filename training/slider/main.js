@@ -17,18 +17,18 @@ myApp.updateSliderCol = function (slideAmount) {
 
 };
 myApp.createTable = function () {
-    var mytable = $('<div id="parent"></div>').attr({id: "basicTable"});
-    var rows = new Number($("#chosenrow").val());
-    var cols = new Number($("#chosencol").val());
-    var tr = [];
+
+    var mytable = $('<div id="basicTable"></div>');
+    document.getElementById("dvTable").innerHTML='';
+    var rows = parseInt($("#chosenrow").val());
+    var cols = parseInt($("#chosencol").val());
     for (var i = 0; i < rows; i++) {
-        var row = $('<div></div>').attr({class: ["class1", "class2", "class3"].join(' ')}).appendTo(mytable);
+        var row = $('<div></div>').appendTo(mytable);
         for (var j = 0; j < cols; j++) {
             $('<div class="colElements"></div>').text("text").appendTo(row);
         }
 
     }
-    console.log("TTTTT:" + mytable.html());
     mytable.appendTo("#dvTable");
 
 };

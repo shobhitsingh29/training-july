@@ -1,13 +1,26 @@
 #slider {
     margin-left: 10px;
 }
-#mytab td{
+#mytab div{
     width:100px;
     height:20px;
     background:#cccccc;
 }
-.colElements{
-    border: 1px solid black;
+#parent{
+    width:500px;
+    height:500px;
+}
+.colElements {
+    padding:10px;
+    margin:10px;
+    border:1px solid red;
+    float:left
+}
+#basicTable{
+    display: inline-block;
+}
+#row,#col{
+    width: 110px;
 }
 .block {
     display: inline-block;
