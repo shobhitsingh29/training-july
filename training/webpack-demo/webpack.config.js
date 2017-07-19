@@ -2,21 +2,22 @@
  * Created by goku on 19-07-2017.
  */
 var path = require('path');
-const webpack = require('webpack');/*
-const HTMLWebpackPlugin = require('html-webpack-plugin');*/
+const webpack = require('webpack');
+const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: {
         app: './src/app.jsx',
         another: './src/another-module.js'
-    },/*, plugins: [
+    },plugins: [
         new HTMLWebpackPlugin({
-            title: 'Code Splitting'
+            title: 'Code Splitting',
+            template: 'src/index.hbss'
         }),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'common' // Specify the common bundle's name.
         })
-    ],*/
+    ],
     output: {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, './src')
