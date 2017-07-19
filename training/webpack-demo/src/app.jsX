@@ -1,7 +1,6 @@
 window.myTodoApp= {};
-
-myTodoApp.init = function () {
-    var myNodelist = document.getElementsByTagName("LI");
+myTodoApp.init = ()=> {
+        var myNodelist = document.getElementsByTagName("LI");
     for (let i = 0; i < myNodelist.length; i++) {
         var span = document.createElement("SPAN");
         var txt = document.createTextNode("\u00D7");
@@ -22,7 +21,7 @@ myTodoApp.init = function () {
 // Click on a close button to hide the current list item
 
 };
-myTodoApp.newElement=function(){
+myTodoApp.newElement= ()=>{
 
 
     var close = document.getElementsByClassName("close");
@@ -32,7 +31,6 @@ myTodoApp.newElement=function(){
             div.style.display = "none";
         }
     }
-
 // Create a new list item when clicking on the "Add" button
         var li = document.createElement("li");
         var inputValue = document.getElementById("myInput").value;

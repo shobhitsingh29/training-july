@@ -1,4 +1,4 @@
-/*import _ from 'lodash';*/
+import _ from 'lodash';
 function getComponent() {
     /*  var element = document.createElement('div');
      var button = document.createElement('button');
