@@ -1,11 +1,7 @@
-
-
 import _ from 'lodash';
-
 console.log(
-    _.join(['Another', 'module', 'loaded!'], ' ')
+    _.join(['app', 'module', 'loaded!'], ' ')
 );
-
 import './todo.less';
 window.myTodoApp= {};
 
@@ -18,8 +14,6 @@ myTodoApp.init = ()=> {
         span.appendChild(txt);
         myNodelist[i].appendChild(span);
     }
-// Click on a close button to hide the current list item
-
 };
 myTodoApp.newElement= ()=>{
 
@@ -37,7 +31,6 @@ myTodoApp.newElement= ()=>{
             div.style.display = "none";
         };
     }
-// Create a new list item when clicking on the "Add" button
         var li = document.createElement("li");
         var inputValue = document.getElementById("myInput").value;
         var t = document.createTextNode(inputValue);
@@ -62,5 +55,4 @@ myTodoApp.newElement= ()=>{
             }
         }
     };
-
 myTodoApp.init();
