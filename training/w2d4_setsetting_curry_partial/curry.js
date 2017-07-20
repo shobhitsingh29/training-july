@@ -4,14 +4,13 @@ function curry(fn) {
     function getCurriedFn(prev) {
         return function (arg) {
             args = prev.concat(arg);
-            if (args.length < n) {
+            if (args.length < n) { // base condition check if arguments  supplied  is less than specified in func definaion
                 return getCurriedFn(args);
             } else {
-                return fn.apply(this, args);
+                return fn.apply(this, args);// base condition arguments equals the specified no of  args ,thus call the func will conactinated array of arguments
             }
         };
     }
-
     return getCurriedFn(args);
 }
 
