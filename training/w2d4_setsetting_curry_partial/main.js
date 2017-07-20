@@ -28,11 +28,10 @@ function partial(fn /*, args...*/) {
     };
 }
 
-
-
-function partialRight(f /*, args...*/) {
+/////**************alan////////////////////////
+function partialRight(fn /*, args...*/) {
     // A reference to the Array#slice method.
-   /* var slice = Array.prototype.slice;
+   var slice = Array.prototype.slice;
     // Convert arguments object to an array, removing the first argument.
     var args = slice.call(arguments, 1);
 
@@ -40,27 +39,17 @@ function partialRight(f /*, args...*/) {
         // Invoke the originally-specified function, passing in all just-
         // specified arguments, followed by any originally-specified arguments.
         return fn.apply(this, slice.call(arguments, 0).concat(args));
-    };*/
-
-
-    var flength = f.length;
-    var args= new Array(flength);
-    var arglength= arguments.length-1;
-    for (var i = arglength, j = flength- arglength; i >=1; i--, j++){
-        args[j] = arguments[i+""];
-    }
-
-    return f.apply(null, args[i]);
+    };
 }
 
-function wedgie(a, b) {
-    return a + ' gives ' + b + ' a wedgie.';
+function adding(a, b,c) {
+    return a + ' is added to ' + b+ ' is added to '+c;
 }
 
-var joeGivesWedgie = partial(wedgie, 'Joe');
-joeGivesWedgie('Ron');    // "Joe gives Ron a wedgie."
-joeGivesWedgie('Bob');    // "Joe gives Bob a wedgie."
+var firstAddedSecond = partial(adding, 'Joe');
+console.log(firstAddedSecond('Ron'));
+console.log(firstAddedSecond('Bob'));
 
-var joeReceivesWedgie = partialRight(wedgie, 'Joe');
-joeReceivesWedgie('Ron'); // "Ron gives Joe a wedgie."
-joeReceivesWedgie('Bob'); // "Bob gives Joe a wedgie."
+var firstAddedSecond = partialRight(adding, 'Joe');
+console.log(firstAddedSecond('Ron'));
+console.log(firstAddedSecond('Bob'));
