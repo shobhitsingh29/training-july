@@ -9,10 +9,8 @@
             curr = arguments[1];
         }
         while (i < len) {
-            if (i in this) {
                 curr = accumulator.call(null, curr, this[i]);
                 i++;
-            }
         }
         return curr;
     };
