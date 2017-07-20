@@ -33,9 +33,6 @@ module.exports = {
         contentBase: './src'
     },
     module: {
-        loaders: [{
-
-        }],
         rules: [
             {
                 test: /\.js$/,
