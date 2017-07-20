@@ -23,6 +23,7 @@ function curry(fn, n) {
 
     // Return a curried version of the original function.
     return getCurriedFn([]);
+}
 
 
 var i = 0;
@@ -63,3 +64,6 @@ d();              // "16: x, y, undefined"
 
 var e = d('z');
 e;                // "17: x, y, z"
+
+
+http://benalman.com/news/2012/09/partial-application-in-javascript/
