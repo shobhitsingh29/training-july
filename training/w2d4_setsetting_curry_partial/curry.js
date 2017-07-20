@@ -1,9 +1,9 @@
 function curry(fn) {
     var n = fn.length, args = [];
 
-    function getCurriedFn(old) {
+    function getCurriedFn(prev) {
         return function (arg) {
-            args = old.concat(arg);
+            args = prev.concat(arg);
             if (args.length < n) {
                 return getCurriedFn(args);
             } else {
