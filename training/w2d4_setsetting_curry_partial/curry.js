@@ -1,14 +1,12 @@
-function curry(fn, n) {
-    // If `n` argument was omitted, use the function .length property.
-    if (typeof n !== 'number') {
-        n = fn.length;
-    }
+function curry(fn) {
 
+    var n = fn.length;
+    var args=[];
     function getCurriedFn(prev) {
-        return function(arg) {
+        return function (arg) {
             // Concat the just-specified argument with the array of
             // previously-specified arguments.
-            var args = prev.concat(arg);
+            args = prev.concat(arg);
             if (args.length < n) {
                 // Not all arguments have been satisfied yet, so return a curried
                 // version of the original function.
@@ -22,7 +20,7 @@ function curry(fn, n) {
     }
 
     // Return a curried version of the original function.
-    return getCurriedFn([]);
+    return getCurriedFn(args);
 }
 
 
@@ -39,11 +37,11 @@ a();              // "4: undefined, undefined, undefined"
 
 // Curried function invocation.
 
-var b = curry(a);
-b();              // `a` not invoked, curried function returned
-b('x');           // `a` not invoked, curried function returned
-b('x')('y');      // `a` not invoked, curried function returned
-b('x')('y')('z'); // "5: x, y, z"
+    var b = curry(a);
+    b();              // `a` not invoked, curried function returned
+    b('x');           // `a` not invoked, curried function returned
+    b('x')('y');      // `a` not invoked, curried function returned
+    b('x')('y')('z'); // "5: x, y, z"
 b('x')('y')();    // "6: x, y, undefined"
 b('x')()();       // "7: x, undefined, undefined"
 b()('y')();       // "8: undefined, y, undefined"
@@ -67,4 +65,4 @@ e();                // "17: x, y, z"
 
 /*
 
-http://benalman.com/news/2012/09/partial-application-in-javascript/*/
+ http://benalman.com/news/2012/09/partial-application-in-javascript/*/
