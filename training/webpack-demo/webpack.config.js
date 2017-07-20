@@ -7,8 +7,8 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: {
-        app: './src/app.jsx',
-        another: './src/another-module.js'
+        app: './src/app.js',
+        another: './src/anothermodule.js'
     },plugins: [
         new HTMLWebpackPlugin({
             title: 'Code Splitting',
@@ -22,19 +22,31 @@ module.exports = {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, './src')
     },
+
+    devServer: {
+        inline: true,
+        port: 8083,
+        historyApiFallback: true
+    },
     devtool: 'inline-source-map',
     devServer: {
         contentBase: './src'
     },
     module: {
         loaders: [{
-            test: /\.jsx$/,
-            exclude: /(node_modules|bower_components)/,
-            use: {
-                loader: 'babel'
-            }
+
         }],
         rules: [
+            {
+                test: /\.js$/,
+                exclude: /(node_modules|bower_components)/,
+                use: {
+                    loader: 'babel-loader',
+                    query: {
+                        presets: ['es2015'],
+                    }
+                }
+            },
             {
                 test: /\.less$/,
                 use: [{
