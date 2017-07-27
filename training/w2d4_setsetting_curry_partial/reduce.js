@@ -1,17 +1,16 @@
 if (!Array.prototype.reduce) {
     Array.prototype.reduce = function reduce(accumulator) {
-        var i = 0, len = this.length, curr; /// here l is the length of the array from which we called it
+        var curr; /// here l is the length of the array from which we called it
         if (arguments.length < 2) { //since value is not pasded here assign current index to  first array value
             curr = this[0];
-            i = 1;
         }
         else {
             curr = arguments[1];
         }
-        while (i < len) {
-            curr = accumulator.call(null, curr, this[i]);
-            i++;
-        }
+        this.forEach(function(element) {
+            curr = accumulator.call(null, curr, element);
+
+        });
         return curr;
     };
 }

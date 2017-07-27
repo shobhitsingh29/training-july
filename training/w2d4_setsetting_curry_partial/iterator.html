@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+
+    "use strict";
+
+
+    let idMaker = {[Symbol.iterator](fn, count)
+    {
+        var init = 0;
+        return {
+            next()
+        {
+
+            if (init < count) {
+                init++;
+                if (init > count) {
+                    return {
+                        value: init,
+                        done: true
+                    }
+                }
+                else {
+                    while (!fn(init)) {
+                        init++;
+                    }
+                }
+            }
+            return {
+                value: init,
+                done: false
+            }
+        }
+    }
+
+    }
+    }
+
+    let evnfn = function (n) {
+        return n % 2 == 0;
+    };
+    let oddfn = function (n) {
+        return n % 2 != 0;
+    };
+    let it = idMaker[Symbol.iterator](evnfn, 10);
+    console.log(it.next().value);
+    console.log(it.next().value);
+    console.log(it.next().value); console.log(it.next().value);
+    console.log(it.next().value);
+    console.log(it.next().value); console.log(it.next().value);
+    console.log(it.next().value);
+    console.log(it.next().value); console.log(it.next().value);
+    console.log(it.next().value);
+    console.log(it.next().value);
+
+    let it1 = idMaker[Symbol.iterator](oddfn, 10);
+    console.log(it1.next().value);
+    console.log(it1.next().value);
+
+    //console.log(it.next('o'));
+</script>
+</html>

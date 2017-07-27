@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let p1 = new Promise(function (resolve, reject) {
+        console.log(('in promise'));
+        setTimeout(function () {
+            console.log(('aa'));
+            reject();
+        }, 2000)
+
+    });
+    let p2 = new Promise(function (resolve, reject) {
+        console.log(('in promise'));
+        setTimeout(function () {
+            console.log(('aads'));
+            reject();
+        }, 1000)
+
+    });
+    Promise.all([p1, p2]).then(function (value) {
+        console.log('Okk' + value);
+        return "cscs"
+    }, function (reason) {
+        console.log('Nope' + reason);
+        return "frfr"
+    }).then(function (value1) {
+        console.log('ORRkk' + value1)
+    }, function (reason) {
+        console.log('NoRRpe' + reason)
+    });
+</script>
+<!--
+<script>
+    function doAsync() {
+        let p = new Promise(function (resolve,reject) {
+            console.log(('in promise'));
+            setTimeout(function () {
+                console.log(('rejecting'));
+                reject()
+                ;
+            }, 2000)
+
+        });
+        return p;
+    }
+
+   doAsync().then(function () {
+        console.log(('resolved'));
+
+    },function () {
+        console.log(('rejected'));
+
+    });
+</script>-->
+<!--<script>
+
+    function* gen1()
+    {
+        try {
+            yield 42;
+            yield 43;
+            yield 44;
+        } catch (e) {
+
+        }
+
+    }
+    var self = gen1();
+    console.log(self.next());
+    console.log(self.next());
+    console.log(self.throw("eer"));
+
+    console.log(self.next());
+</script>-->
+<!--
+<script>
+
+    function* process(){
+        yield 3;
+        yield* [1,2,3]
+    }
+    let self=process();
+    console.log(self.next());
+    console.log(self.next());
+    console.log(self.next());
+
+
+
+</script>-->
+<!--<script>
+
+    "use strict";
+
+
+    function* process(initial,fn){
+        var index = initial;
+        while(true)
+        {
+
+            yield fn(index);
+            index+=2;
+    }
+
+
+    }
+
+    let evnfn = function (n) {
+        if(n % 2 == 0) {
+            return n;
+        }
+    };
+    let oddfn = function (n) {
+        if(n % 2 != 0) {
+            return n;
+        }
+    };
+
+
+    let self=process(8,evnfn);
+    console.log(self.next());
+    console.log(self.next());
+    console.log(self.next());
+
+
+    let self1=process(3,oddfn);
+
+    console.log(self1.next());
+    console.log(self1.next());
+    console.log(self1.next());
+
+
+</script>-->
+</html>

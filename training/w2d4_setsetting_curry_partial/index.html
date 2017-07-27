@@ -7,5 +7,20 @@
 <body>
 
 </body>
-<script src="main.js"></script>
+<script>
+
+    "use strict";
+    let value = [6, 4, 5];
+    let sum = value + 10;
+    console.log(sum);
+
+    value[Symbol.toPrimitive] = function (hint) {
+        console.log(hint);
+        return 11;
+    };
+    let sum2 = value + 10;
+
+    console.log(sum2)
+
+</script>
 </html>

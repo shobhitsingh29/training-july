@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+
+    "use strict";
+    let idMaker = [Symbol.iterator]()
+    {
+        var init = 0;
+        return {
+            next()
+        {
+
+            if (init < count) {
+                init++;
+                if (init > count) {
+                    return yield ;
+                }
+                else {
+                    while (!fn(init)) {
+                        init++;
+                    }
+                }
+            }
+            return yield;
+        }
+    }
+
+    }
+    }
+
+    let it=idMaker[Symbol.iterator]();
+    console.log(it.next().value);
+
+</script>
+</html>
