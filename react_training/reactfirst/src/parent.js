@@ -2,6 +2,9 @@ import React from "react"
 import ReactDOM from "react-dom"
 import MyButton from "./app.js"
 
+import Data from "./validatiion.js"
+import Page from "./ul_li_list.js"
+
 class ParentBtn extends React.Component {
     constructor(props) {
         super(props);
@@ -53,7 +56,7 @@ class ParentBtn extends React.Component {
     }
 
     render() {
-        return <div> child <MyButton onbtnclick={this.onbtnclick} Mytext={this.Mytext}></MyButton > <input type="text"
+        return <div> child <MyButton onbtnclick={this.onbtnclick} Mytext={this.Mytext}></MyButton> <Page></Page><input type="text"
                                                                                                            onChange={this.hndlecng}
                                                                                                            defaultValue={this.state.txt}/>
             <p>
