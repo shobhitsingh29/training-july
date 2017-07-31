@@ -10,7 +10,10 @@ export default function stateReducer(state=initialState,action) {
      case actionTypes.DECREAMENT_COUNTER:
             console.log((state));
             return Object.assign({},...state,{counter: state.counter-1});
-        case default
+         case actionTypes.RESET_COUNTER:
+            console.log((state));
+            return Object.assign({},...state,{counter: 0});
+         default:
             console.log((state));
             return Object.assign({},...state,{counter: state.counter+1});
     }
