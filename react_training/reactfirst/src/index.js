@@ -4,15 +4,17 @@ import {NavHead} from "./components/navHead.js"
 import {RouteHead} from "./components/routehead"
 import {Footer} from "./components/footer"
 import {Header} from "./components/header"
+import {default as App} from  "./container/AppRedux"
 import {BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import {Provider} from 'react-redux';
-import  {combineReducers,createStore} from "redux";
+import  {combineReducers,createStore,applyMiddleware} from "redux";
 import  {default as myreducers} from "./reducers/stateReducer.js"
+import {logger,crashReporter} from  "./middleware/middleware"
 
 const reducers=combineReducers({
     state:myreducers
 });
-const store =createStore(reducers);
+const store =createStore(reducers,applyMiddleware(logger));
 
 
 
