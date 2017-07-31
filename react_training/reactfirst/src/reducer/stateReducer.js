@@ -1,6 +1,8 @@
+
+import * as actionTypes from"../actiontypes/actionsTypes.js"
 const initialState ={
     counter: 0
-}
+};
 export default function stateReducer(state=initialState,action) {
 
     switch(action.type){
