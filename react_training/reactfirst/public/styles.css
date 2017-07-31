@@ -5,3 +5,12 @@
     width:100%;
     background:green;
 }
+header{
+    top: 0;
+    margin: 0 auto;
+    width:100%;
+    background:red;
+}
+form{
+    display: inline-grid;
+}
