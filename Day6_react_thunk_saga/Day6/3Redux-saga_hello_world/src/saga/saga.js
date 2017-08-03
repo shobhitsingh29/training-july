@@ -1,6 +1,6 @@
 import React from "react";
 import {delay} from "redux-saga";
-import {call, put, takeEvery, all, race} from "redux-saga/effects";
+import {call, put, takeLatest,takeEvery, all, race} from "redux-saga/effects";
 import * as actionTypes from "../constants/ActionTypes";
 
 export function* helloSaga() {
@@ -21,17 +21,16 @@ function myApiCall() {
 
 }
 
-
 function myApiCall1() {
     return new Promise(function (resolve) {
-        setTimeout(resolve("32"), 5000)
+        setTimeout(()=>resolve("32"), 5000)
     });
 }
 
 function myApiCall2() {
 
     return new Promise(function (resolve) {
-        setTimeout(resolve("23"), 1000)
+        setTimeout(()=>resolve("23"), 1000)
     });
 }
 
