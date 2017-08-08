@@ -85,5 +85,8 @@
   "version": "1.0.0",
   "description": "A multipage app of react",
   "main": "server.js",
+  "engines": {
+    "node": ">=7.5.0"
+  },
   "repository": "https://github.com/shobhitsingh29/training-july/"
 }
