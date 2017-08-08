@@ -3,11 +3,11 @@ const webpack = require('webpack');
 
 const config = {
   context: __dirname,
-  entry: ['./src/ClientApp.jsx'],
+  entry: ['./src/components/app.jsx'],
   devtool: process.env.NODE_ENV === 'development' ? 'cheap-eval-source-map' : false,
   output: {
     path: path.resolve(__dirname, 'public'),
-    filename: 'bundle.src',
+    filename: 'bundle.js',
     publicPath: '/public/'
   },
   devServer: {
@@ -16,7 +16,7 @@ const config = {
     historyApiFallback: true
   },
   resolve: {
-    extensions: ['.src', '.jsx', '.json']
+    extensions: ['.jsx', '.json']
   },
   stats: {
     colors: true,
