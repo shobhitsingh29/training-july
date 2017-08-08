@@ -8,7 +8,7 @@ module.exports = {
         port: 3000
     },
     devtool: 'cheap-module-eval-source-map',
-    entry: './dev/js/index.js',
+    entry: './dev/src/index.src',
     module: {
         loaders: [
             {
@@ -24,7 +24,7 @@ module.exports = {
     },
     output: {
         path: 'src',
-        filename: 'js/bundle.min.js'
+        filename: 'src/bundle.min.src'
     },
     plugins: [
         new webpack.optimize.OccurrenceOrderPlugin()

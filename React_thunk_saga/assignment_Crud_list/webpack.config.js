@@ -1,17 +1,22 @@
-/**
- * Created by shob on 25-07-2017.
- */
 
 var path = require('path');
 const webpack = require('webpack');
+
 module.exports = {
     entry: {
-        app: './entry.src'
-    },
+        app: './src/index.jsx'
+    },plugins: [
+        new HTMLWebpackPlugin({
+            title: 'Code Splitting',
+            template: 'src/index.hbss'
+        }),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'common' // Specify the common bundle's name.
+        })
+    ],
     output: {
-        path: __dirname,
-        filename: './bundle.src'
-
+        filename: '[name].bundle.js',
+        path: path.resolve(__dirname, './src')
     },
 
     devServer: {
@@ -20,25 +25,29 @@ module.exports = {
         historyApiFallback: true
     },
     devtool: 'inline-source-map',
+    devServer: {
+        contentBase: './src'
+    },
     module: {
         rules: [
-           /* {
-                test: /\.src$/,
+            {
+                test: /\.js$/,
                 exclude: /(node_modules|bower_components)/,
                 use: {
                     loader: 'babel-loader',
                     query: {
-
                         presets: ['es2015'],
                     }
                 }
-            },*/
+            },
             {
-                test: /\.css/,
+                test: /\.less$/,
                 use: [{
                     loader: "style-loader" // creates style nodes from JS strings
                 }, {
                     loader: "css-loader" // translates CSS into CommonJS
+                }, {
+                    loader: "less-loader" // compiles Less to CSS
                 }]
             }]
     }

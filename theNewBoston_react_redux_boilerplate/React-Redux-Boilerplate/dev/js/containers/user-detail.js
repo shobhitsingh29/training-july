@@ -21,7 +21,7 @@ class UserDetail extends Component {
     }
 }
 
-// "state.activeUser" is set in reducers/index.js
+// "state.activeUser" is set in reducers/index.src
 function mapStateToProps(state) {
     return {
         user: state.activeUser

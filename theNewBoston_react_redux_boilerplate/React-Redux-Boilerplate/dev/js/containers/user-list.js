@@ -43,6 +43,6 @@ function matchDispatchToProps(dispatch){
     return bindActionCreators({selectUser: selectUser}, dispatch);
 }
 
-// We don't want to return the plain UserList (component) anymore, we want to return the smart Container
+// We don't want to return the plain UserList (components) anymore, we want to return the smart Container
 //      > UserList is now aware of state and actions
 export default connect(mapStateToProps, matchDispatchToProps)(UserList);

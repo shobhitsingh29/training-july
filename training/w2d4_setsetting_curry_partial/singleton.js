@@ -9,10 +9,10 @@ function init() {
 
     return {
         publicMethod: function () {
-            console.log( "The dist can see me!" );
+            console.log( "The public can see me!" );
         },
 
-        publicProperty: "I am also dist"
+        publicProperty: "I am also public"
     };
 
 }

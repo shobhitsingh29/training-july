@@ -9,13 +9,13 @@ gulp.task('bundle',function(){
 
     console.log("BUNDLE LOADED");
 
-    gulp.src("./*.js").pipe(browserify()).pipe(gulp.dest("../dist"));
+    gulp.src("./*.src").pipe(browserify()).pipe(gulp.dest("../public"));
 
 });
 
 gulp.task("default",function(){
 
-    gulp.watch("./**/*.js",['bundle']);
+    gulp.watch("./**/*.src",['bundle']);
 });
 
 

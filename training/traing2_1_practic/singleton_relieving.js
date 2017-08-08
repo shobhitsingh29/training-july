@@ -14,7 +14,7 @@ var mySingleton = (function () {
                 console.log( "public" );
             },
 
-            publicProperty: "I am also dist"
+            publicProperty: "I am also public"
         };
 
 }

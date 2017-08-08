@@ -11,7 +11,7 @@ const webpackHotMiddleware = require('webpack-hot-middleware');
 const compression = require('compression');
 const webpack = require('webpack');
 const config = require('./webpack.config');
-const App = require('./js/App').default;
+const App = require('./src/components/app').default;
 
 const StaticRouter = ReactRouter.StaticRouter;
 const port = 8080;
@@ -29,7 +29,7 @@ if (process.env.NODE_ENV === 'development') {
   );
   server.use(webpackHotMiddleware(compiler));
 }
-server.use('/dist', express.static('./dist'));
+server.use('/public', express.static('./public'));
 
 server.use((req, res) => {
   const context = {};

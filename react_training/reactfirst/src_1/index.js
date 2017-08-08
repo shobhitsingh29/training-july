@@ -24,9 +24,9 @@ ReactDOM.render((
                     <li><Link to="/topic">Topic</Link></li>
             </ul>
             <hr/>
-                <Route path="/home" component={Header}/>
-                <Route path="/about" component={About}/>
-                <Route path="/topic" component={Topic}/>
+                <Route path="/home" components={Header}/>
+                <Route path="/about" components={About}/>
+                <Route path="/topic" components={Topic}/>
         </div>
     </Router>
 

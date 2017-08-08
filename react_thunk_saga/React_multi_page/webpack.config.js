@@ -3,20 +3,20 @@ const webpack = require('webpack');
 
 const config = {
   context: __dirname,
-  entry: ['./js/ClientApp.jsx'],
+  entry: ['./src/ClientApp.jsx'],
   devtool: process.env.NODE_ENV === 'development' ? 'cheap-eval-source-map' : false,
   output: {
     path: path.resolve(__dirname, 'public'),
-    filename: 'bundle.js',
-    publicPath: '/dist/'
+    filename: 'bundle.src',
+    publicPath: '/public/'
   },
   devServer: {
     hot: true,
-    publicPath: '/dist/',
+    publicPath: '/public/',
     historyApiFallback: true
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.json']
+    extensions: ['.src', '.jsx', '.json']
   },
   stats: {
     colors: true,
@@ -35,7 +35,7 @@ const config = {
       {
         test: /\.jsx?$/,
         loader: 'babel-loader',
-        include: [path.resolve('js'), path.resolve('node_modules/preact-compat/src')]
+        include: [path.resolve('src'), path.resolve('node_modules/preact-compat/src')]
       }
     ]
   }

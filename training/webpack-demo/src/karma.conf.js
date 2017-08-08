@@ -16,8 +16,8 @@ module.exports = function (config) {
     config.set({
         frameworks: [ 'jasmine' ],
         files: [
-            './node_modules/phantomjs-polyfill/bind-polyfill.js',
-            'tests/**/*_spec.js'
+            './node_modules/phantomjs-polyfill/bind-polyfill.src',
+            'tests/**/*_spec.src'
         ],
         plugins: [
             webpack,

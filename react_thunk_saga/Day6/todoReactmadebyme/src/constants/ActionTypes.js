@@ -1,7 +1,0 @@
-export const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER';
-export const SET_DROPDOWN_FILTER = 'SET_DROPDOWN_FILTER';
-export const ADD_TODO = 'ADD_TODO';
-export const DEL_TODO = 'DEL_TODO';
-export const DEL_ALL_TODO = 'DEL_ALL_TODO';
-export const TOGGLE_TODO = 'TOGGLE_TODO';
-

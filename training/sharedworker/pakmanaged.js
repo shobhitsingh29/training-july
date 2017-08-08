@@ -1,4 +1,4 @@
-var worker = new SharedWorker("jsworker.js");
+var worker = new SharedWorker("jsworker.src");
 
 worker.port.addEventListener("message", function(e) {
     alert(e.data);
