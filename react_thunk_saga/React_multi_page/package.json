@@ -56,13 +56,10 @@
     "eslint-config-prettier": "2.1.1",
     "eslint-config-react": "1.1.7",
     "eslint-loader": "1.7.1",
-    "eslint-plugin-flow": "2.29.1",
-    "eslint-plugin-flowtype": "2.33.0",
     "eslint-plugin-import": "2.3.0",
     "eslint-plugin-jsx-a11y": "5.0.3",
     "eslint-plugin-prettier": "^2.1.2",
     "eslint-plugin-react": "^7.1.0",
-    "flow-bin": "0.47.0",
     "jest": "20.0.4",
     "jest-serializer-enzyme": "1.0.0",
     "moxios": "0.4.0",
@@ -73,11 +70,9 @@
     "webpack-dev-server": "2.4.5",
     "yarn": "^0.27.5"
   },
-  "name": "complete-intro-to-react",
-  "version": "3.0.0",
-  "description": "A Complete Intro to React workshop",
+  "name": "multipage-App",
+  "version": "1.0.0",
+  "description": "A multipage app of react",
   "main": "server.js",
-  "repository": "git@github.com:btholt/complete-intro-to-react.git",
-  "author": "Brian Holt <btholt@gmail.com>",
-  "license": "MIT"
+  "repository": "https://github.com/shobhitsingh29/training-july/"
 }

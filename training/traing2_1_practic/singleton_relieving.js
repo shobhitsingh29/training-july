@@ -14,11 +14,11 @@ var mySingleton = (function () {
                 console.log( "public" );
             },
 
-            publicProperty: "I am also public"
+            publicProperty: "I am also dist"
         };
 
-    };
-    return {
+}
+	return {
         getInstance: function () {
 
             if ( !instance ) {

@@ -8,19 +8,15 @@ const config = {
   output: {
     path: path.resolve(__dirname, 'public'),
     filename: 'bundle.js',
-    publicPath: '/public/'
+    publicPath: '/dist/'
   },
   devServer: {
     hot: true,
-    publicPath: '/public/',
+    publicPath: '/dist/',
     historyApiFallback: true
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.json'],
-    alias: {
-      react: 'preact-compat',
-      'react-dom': 'preact-compat'
-    }
+    extensions: ['.js', '.jsx', '.json']
   },
   stats: {
     colors: true,

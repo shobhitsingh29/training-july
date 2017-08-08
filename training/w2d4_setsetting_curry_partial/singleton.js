@@ -9,14 +9,14 @@ function init() {
 
     return {
         publicMethod: function () {
-            console.log( "The public can see me!" );
+            console.log( "The dist can see me!" );
         },
 
-        publicProperty: "I am also public"
+        publicProperty: "I am also dist"
     };
 
-};
-return {
+}
+	return {
     getInstance: function () {
 
         if ( !instance ) {

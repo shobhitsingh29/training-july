@@ -1,4 +1,3 @@
-// @flow
 
 import React from 'react';
 import { connect } from 'react-redux';
@@ -32,7 +31,7 @@ class Details extends React.Component {
           <h1>{title}</h1>
           <h2>({year})</h2>
           {rating}
-          <img src={`/public/img/posters/${poster}`} alt={`Poster for ${title}`} />
+          <img src={`/dist/img/posters/${poster}`} alt={`Poster for ${title}`} />
           <p>{description}</p>
         </section>
         <div>

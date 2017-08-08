@@ -1,6 +1,5 @@
 /* eslint no-console:0 */
 require('babel-register');
-
 const express = require('express');
 const React = require('react');
 const ReactDOMServer = require('react-dom/server');
@@ -30,7 +29,7 @@ if (process.env.NODE_ENV === 'development') {
   );
   server.use(webpackHotMiddleware(compiler));
 }
-server.use('/public', express.static('./public'));
+server.use('/dist', express.static('./dist'));
 
 server.use((req, res) => {
   const context = {};
