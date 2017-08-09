@@ -16,6 +16,7 @@ const App = require('./js/App').default;
 
 const StaticRouter = ReactRouter.StaticRouter;
 const port = 8080;
+
 const baseTemplate = fs.readFileSync('./index.html');
 const template = _.template(baseTemplate);
 
