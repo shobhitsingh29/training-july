@@ -7,7 +7,7 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: {
-        app: './src/app.js',
+        app: './src/App.jsx',
         another: './src/anothermodule.js'
     },plugins: [
         new HTMLWebpackPlugin({
