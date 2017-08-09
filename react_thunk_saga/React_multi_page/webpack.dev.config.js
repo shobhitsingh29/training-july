@@ -1,35 +1,40 @@
-
-const path = require('path');
-
+const path = require("path");
+var webpack = require('webpack');
 module.exports = {
-    devtool: 'inline-source-map',
-
-    entry: [
-        path.resolve(__dirname, 'src/main.js')
-    ],
-    output: {
-        path: path.resolve(__dirname, './dist'),
-        filename: 'bundle.js',
-        publicPath: '/'
-    },
-    module: {
-        loaders: [
-            {
-                test: /\.js$/,
-                loader: 'babel-loader',
-                exclude: /node_modules/,
-                query: {
-                presets: ['es2015','react']
-                }
-            }, {
-                test: /\.css$/,
-                loaders: [{
-                    loader: 'style-loader'
-                },
-                {
-                    loader: 'css-loader'
-                }]
-            }
-        ]
-    }
+	devtool: "inline-source-map",
+	entry: [
+		'webpack-hot-middleware/client?reload=true',
+		path.resolve(__dirname, "src/js/main.js")
+	],
+	output: {
+		path: path.resolve(__dirname, "./dist"),
+		filename: "bundle.js",
+		publicPath: "/"
+	},
+	resolve: {
+		extensions: ['.js', '.jsx', '.json']
+	},
+	devServer: {
+		hot: true,
+		publicPath: "/",
+		historyApiFallback: true
+	},
+	plugins: [new webpack.HotModuleReplacementPlugin(), new webpack.NamedModulesPlugin()],
+	module: {
+		loaders: [
+			{
+				test: /\.js$/,
+				loader: "babel-loader",
+				exclude: /node_modules/
+			}, {
+				test: /\.css$/,
+				loaders: [{
+					loader: "style-loader"
+				},
+					{
+						loader: "css-loader"
+					}]
+			}
+		]
+	}
 };
